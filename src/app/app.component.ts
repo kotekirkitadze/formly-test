@@ -8,26 +8,76 @@ import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  form = new FormGroup({});
-  model: any = {};
-  options: FormlyFormOptions = {};
+  title = 'angularFormly';
 
-  fields: FormlyFieldConfig[] = [
-    {
-      key: 'firstName',
-      type: 'input',
-      wrappers: ['panel'],
-      templateOptions: {
-        required: true,
-        type: 'text',
-        label: 'First Name',
+  contactForm: FormGroup;
+  contactModel: Contact;
+
+  contactFields: Array<FormlyFieldConfig>;
+
+  constructor() {
+    this.contactForm = new FormGroup({});
+    this.contactModel = new Contact();
+
+    this.contactFields = [
+      // <label>Name</label>
+      // <input type="text" placeHolder="Name" required>
+      {
+        key: 'name',
+        type: 'input',
+        templateOptions: {
+          type: 'text',
+          label: 'Name',
+          placeholder: 'Name',
+          required: true,
+        },
+        validation: {
+          messages: {
+            required: 'You need to provide a name!',
+          },
+        },
       },
-    },
-  ];
-
-  submit() {
-    if (this.form.valid) {
-      alert(JSON.stringify(this.model));
-    }
+      {
+        key: 'phoneNumber',
+        type: 'input',
+        templateOptions: {
+          type: 'text',
+          label: 'Phone number',
+          placeholder: 'Phone number',
+          required: true,
+        },
+        validation: {
+          messages: {
+            required: 'You need to provide a phone!',
+          },
+        },
+      },
+      {
+        key: 'email',
+        type: 'input',
+        wrappers: ['panel'],
+        templateOptions: {
+          type: 'text',
+          label: 'Email',
+          placeholder: 'Email',
+          required: true,
+        },
+        validation: {
+          messages: {
+            required: 'You need to provide a email!',
+          },
+        },
+      },
+    ];
   }
+
+  submitForm(contactModel: Contact) {
+    console.log(contactModel);
+  }
+}
+
+export class Contact {
+  phone = '';
+  phoneNumberstring = '';
+  email = '';
 }
