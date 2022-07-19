@@ -22,36 +22,7 @@ export class AppComponent {
     this.contactFields = [
       // <label>Name</label>
       // <input type="text" placeHolder="Name" required>
-      {
-        key: 'name',
-        type: 'input',
-        templateOptions: {
-          type: 'text',
-          label: 'Name',
-          placeholder: 'Name',
-          required: true,
-        },
-        validation: {
-          messages: {
-            required: 'You need to provide a name!',
-          },
-        },
-      },
-      {
-        key: 'phoneNumber',
-        type: 'input',
-        templateOptions: {
-          type: 'text',
-          label: 'Phone number',
-          placeholder: 'Phone number',
-          required: true,
-        },
-        validation: {
-          messages: {
-            required: 'You need to provide a phone!',
-          },
-        },
-      },
+
       {
         key: 'email',
         type: 'input',

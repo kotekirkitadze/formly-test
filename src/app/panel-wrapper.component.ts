@@ -7,7 +7,7 @@ import { FieldWrapper } from '@ngx-formly/core';
     <div class="card">
       <h3 class="card-header">Its time to party</h3>
       <h3 class="card-header">{{ to.label }}</h3>
-      <div class="card-body">
+      <div>
         <ng-container #fieldComponent></ng-container>
       </div>
     </div>
