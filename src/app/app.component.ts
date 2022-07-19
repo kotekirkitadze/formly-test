@@ -23,6 +23,16 @@ export class AppComponent {
         label: 'First Name',
       },
     },
+    {
+      key: 'firstName',
+      type: 'checkbox',
+      wrappers: ['panel'],
+      templateOptions: {
+        required: true,
+        type: 'text',
+        label: 'Last Name',
+      },
+    },
   ];
 
   submit() {
