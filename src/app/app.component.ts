@@ -13,25 +13,30 @@ export class AppComponent {
   options: FormlyFormOptions = {};
 
   fields: FormlyFieldConfig[] = [
+    // {
+    //   key: 'firstName',
+    //   type: 'input',
+    //   wrappers: ['panel'],
+    //   templateOptions: {
+    //     required: true,
+    //     type: 'text',
+    //     label: 'First Name',
+    //   },
+    // },
+    // {
+    //   key: 'firstName',
+    //   type: 'checkbox',
+    //   wrappers: ['panel'],
+    //   templateOptions: {
+    //     required: true,
+    //     type: 'text',
+    //     label: 'Last Name',
+    //   },
+    // },
     {
-      key: 'firstName',
+      key: 'firstname',
       type: 'input',
       wrappers: ['panel'],
-      templateOptions: {
-        required: true,
-        type: 'text',
-        label: 'First Name',
-      },
-    },
-    {
-      key: 'firstName',
-      type: 'checkbox',
-      wrappers: ['panel'],
-      templateOptions: {
-        required: true,
-        type: 'text',
-        label: 'Last Name',
-      },
     },
   ];
 
