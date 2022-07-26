@@ -23,23 +23,40 @@ export class AppComponent {
       // <label>Name</label>
       // <input type="text" placeHolder="Name" required>
 
+      // {
+      //   key: 'email',
+      //   type: 'input',
+      //   wrappers: ['panel'],
+      //   templateOptions: {
+      //     type: 'text',
+      //     label: 'Email',
+      //     placeholder: 'Email',
+      //     required: true,
+      //   },
+      //   validation: {
+      //     messages: {
+      //       required: 'You need to provide a email!',
+      //     },
+      //   },
+      // },
       {
-        key: 'email',
-        type: 'input',
+        key: 'custom',
         wrappers: ['panel'],
         templateOptions: {
-          type: 'text',
-          label: 'Email',
-          placeholder: 'Email',
-          required: true,
+          label: 'Custom inlined',
         },
-        validation: {
-          messages: {
-            required: 'You need to provide a email!',
+        fieldGroup: [
+          {
+            type: 'custom',
           },
-        },
+        ],
       },
     ];
+
+    setTimeout(() => {
+      this.contactForm.valueChanges.subscribe(console.log);
+      console.log('hh', this.contactForm);
+    }, 2000);
   }
 
   submitForm(contactModel: Contact) {
